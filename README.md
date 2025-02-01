@@ -51,4 +51,4 @@ A retro-themed, blockbuster-quality interactive dashboard for exploring the mech
 1. **Clone or Download the Repository:**
 
    ```bash
-   git clone https://github.com/yourusername/3d-material-dashboard.git
+   git clone https://github.com/greygizmo/materialexpert.git
