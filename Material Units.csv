@@ -1,0 +1,20 @@
+Tensile Strength,Mpa
+Young's Modulus,MPa
+Elongation at Break,%
+Flexural Strength,MPa
+HDT @ 0.45MPa,C
+HDT @ 0.45MPa thermal treatment A,C
+HDT @ 1.82MPa,C
+Izod Notched Impact,J/m
+Water Absorbtion Rate,%
+Tg,C
+Coeffecient of Thermal Expansion,in/in F
+Specific Gravity,Ratio
+Dielectric Strength,kV/mm
+Volume Resistivity,Ohms
+Shore Hardness,Scale A
+Shore Hardness,Scale D
+Rockwell Hardness,Scale M
+Tensile Tear Resistance,Kg/cm
+Polymerized Density,g/cm3
+Ash Content,%

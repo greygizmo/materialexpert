@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>3D Material Dashboard – Standard Visuals</title>
+  <!-- Use a retro digital font; you can load one from Google Fonts if desired -->
+  <link rel="stylesheet" href="style.css">
+  <!-- External Libraries -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <h2>Material Dashboard</h2>
+    <nav>
+      <ul>
+        <li><a href="#" data-section="scatter">Scatter Plot</a></li>
+        <li><a href="#" data-section="parallel">Parallel Coordinates</a></li>
+        <li><a href="#" data-section="radar">Radar Chart</a></li>
+        <li><a href="#" data-section="barchart">Top Bar Chart</a></li>
+        <li><a href="#" data-section="correlation">Correlation Heatmap</a></li>
+      </ul>
+    </nav>
+    <!-- Global Info Area -->
+    <div id="infoArea">
+      <h3>Chart Information</h3>
+      <div id="infoContent">
+        <!-- Info text will be injected here -->
+      </div>
+    </div>
+  </div>
+  <div id="main">
+    <!-- Scatter Plot Section -->
+    <section id="scatter" class="content-section">
+      <h1>Interactive Scatter Plot</h1>
+      <div id="scatterControls">
+        <label for="xSelect">X-axis:</label>
+        <select id="xSelect"></select>
+        <label for="ySelect" style="margin-left:20px;">Y-axis:</label>
+        <select id="ySelect"></select>
+        <label for="techFilter" style="margin-left:20px;">Technology Filter:</label>
+        <select id="techFilter"></select>
+        <label style="margin-left:20px;">
+          <input type="checkbox" id="trendlineCheck"> Show Trendline
+        </label>
+        <label style="margin-left:20px;">
+          <input type="checkbox" id="showNames" checked> Show Materials
+        </label>
+      </div>
+      <div id="scatterPlotStandard" class="visual"></div>
+    </section>
+    
+    <!-- Parallel Coordinates Section -->
+    <section id="parallel" class="content-section" style="display:none;">
+      <h1>Parallel Coordinates Plot</h1>
+      <div id="parallelFilterContainer" style="text-align:center; margin-bottom:10px;">
+        <label for="parallelTechFilter">Technology Filter:</label>
+        <select id="parallelTechFilter"></select>
+        <label for="parallelFilter">Show % of Materials:</label>
+        <input type="range" id="parallelFilter" min="10" max="100" step="10" value="50">
+        <span id="parallelFilterValue">50%</span>
+        <label style="margin-left:20px;">
+          <input type="checkbox" id="showParallelNames" checked> Show Material Names on Hover
+        </label>
+      </div>
+      <div id="parallelPlot" class="visual"></div>
+    </section>
+    
+    <!-- Radar Chart Section -->
+    <section id="radar" class="content-section" style="display:none;">
+      <h1>Radar Chart Comparison</h1>
+      <div id="radarFilterContainer" style="text-align:center; margin-bottom:10px;">
+        <label for="radarCategoryFilter" class="filterLabel">Category Filter:</label>
+        <select id="radarCategoryFilter"></select>
+      </div>
+      <div id="radarButtonContainer" style="text-align:center; margin-bottom:10px;">
+        <!-- Radar buttons will be generated here -->
+      </div>
+      <div id="radarOptions" style="text-align:center; margin-bottom:10px;">
+        <label class="avgToggle"><input type="checkbox" id="showAverage" checked> Show Average (of selectable materials)</label>
+      </div>
+      <div id="radarPlotStandard" class="visual" style="height:80%;"></div>
+    </section>
+    
+    <!-- Top Bar Chart Section -->
+    <section id="barchart" class="content-section" style="display:none;">
+      <h1>Top Properties Bar Chart</h1>
+      <div id="barControls" style="text-align:center; margin-bottom:10px;">
+        <label for="barSelect">Select Property:</label>
+        <select id="barSelect"></select>
+        <label for="barAnalysis" style="margin-left:20px;">Analysis Mode:</label>
+        <select id="barAnalysis">
+          <option value="raw">Raw</option>
+          <option value="norm">Normalized</option>
+          <option value="zscore">Z-Score</option>
+        </select>
+        <label for="barTechFilter" style="margin-left:20px;">Technology Filter:</label>
+        <select id="barTechFilter"></select>
+      </div>
+      <div id="barPlot" class="visual"></div>
+      <div id="propertyInfo" style="margin-top:10px; padding: 10px; background: #111; color: #00ff99; border: 1px solid #00ff99; border-radius: 4px;">
+        <!-- Property explanation text will be inserted here -->
+      </div>
+    </section>
+    
+    <!-- Correlation Heatmap Section -->
+    <section id="correlation" class="content-section" style="display:none;">
+      <h1>Correlation Heatmap</h1>
+      <div id="corrTechContainer" style="text-align:center; margin-bottom:10px;">
+        <label for="corrTechFilter">Technology Filter:</label>
+        <select id="corrTechFilter"></select>
+      </div>
+      <div id="corrSummary" style="text-align:center; margin-bottom:10px; color:#ccc;"></div>
+      <div id="correlationPlot" class="visual"></div>
+      <div id="corrReport" style="margin-top:10px; padding: 10px; background: #111; color: #00ff99; border: 1px solid #00ff99; border-radius: 4px;">
+        <!-- Correlation analysis report will be inserted here -->
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
